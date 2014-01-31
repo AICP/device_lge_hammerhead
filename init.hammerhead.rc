@@ -132,6 +132,11 @@ on boot
     #venus
     write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
 
+    # Subsytem Ramdump collection
+    mkdir /data/tombstones 0777 system system
+    mkdir /data/tombstones/ramdump 0777 system system
+    write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
+
     # Modem logging collection
     mkdir /data/diag_logs 0777 system system
     chmod 666 /dev/diag
@@ -445,7 +450,6 @@ service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -
 
 service ssr_ramdump /system/bin/subsystem_ramdump -m -t emmc
     class main
-    disabled
     user root
     group root
 
