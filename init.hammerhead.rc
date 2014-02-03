@@ -173,10 +173,6 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
-    # communicate with mpdecision and thermald
-    mkdir /dev/socket/mpdecision 0770 system system
-    chmod 2770 /dev/socket/mpdecision
-
     # save rtc time offsets
     mkdir /data/system/time/ 0700 system system
 
@@ -275,7 +271,6 @@ on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
-    start mpdecision
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
@@ -306,7 +301,6 @@ on property:sys.boot_completed=1
     write /sys/module/msm_pm/modes/cpu1/retention/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu2/retention/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu3/retention/idle_enabled 1
-    start mpdecision
 
 service rmt_storage /system/bin/rmt_storage
     class core
@@ -443,12 +437,6 @@ service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -
     user bluetooth
     group system bluetooth
     oneshot
-
-service mpdecision /system/bin/mpdecision --avg_comp
-   class main
-   user root
-   group root
-   disabled
 
 service ssr_ramdump /system/bin/subsystem_ramdump -m -t emmc
     class main
