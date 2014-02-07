@@ -203,6 +203,10 @@ PRODUCT_PACKAGES += \
     qrngd \
     qrngp
 
+# rename mpdecision bin
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/99mpdecRenamer:system/etc/init.d/99mpdecRenamer
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
 

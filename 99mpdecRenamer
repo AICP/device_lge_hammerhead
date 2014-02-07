@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+if [[ -f /system/bin/mpdecision ]]
+then
+     mount -o remount,rw /system
+     mv /system/bin/mpdecision /system/bin/mpdecisionRENAMED
+     mount -o remount,ro /system
+else
+     busybox echo "File already renamed or it doesn't exist"
+fi
