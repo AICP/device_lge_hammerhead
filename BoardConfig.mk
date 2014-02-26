@@ -36,6 +36,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 msm_watchdog_v2.enable=1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -100,8 +101,6 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_hammerhead
 TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
-
-PDK_PLATFORM_ZIP_PRODUCT_BINARIES := device/lge/hammerhead-kernel/vmlinux.bz2
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
