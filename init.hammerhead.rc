@@ -48,6 +48,7 @@ on fs
     mount_all ./fstab.hammerhead
     setprop ro.crypto.fuse_sdcard true
     write /sys/kernel/boot_adsp/boot 1
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
