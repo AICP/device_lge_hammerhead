@@ -8,7 +8,7 @@
     "repository": "AOKP/vendor_lge",
     "target_path": "vendor/lge",
     "branch":      "kitkat"
-  }
+  },
   {
     "repository": "CyanogenMod/android_device_qcom_common",
     "target_path": "device/qcom/common",
