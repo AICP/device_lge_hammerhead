@@ -345,6 +345,10 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     QXDMLogger
 
+# rename mpdecision bin
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/99mpdecRenamer:system/etc/init.d/99mpdecRenamer
+
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc.userdebug:root/init.hammerhead.diag.rc
 else
