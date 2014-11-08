@@ -30,6 +30,9 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhea
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
+TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
+TARGET_KERNEL_CONFIG := slim_hammerhead_defconfig
+
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
@@ -44,7 +47,12 @@ BOARD_USES_ALSA_AUDIO := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+
+ifeq ($(TARGET_PRODUCT),car_hammerhead)
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/hammerhead/bluetooth_car
+else
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/hammerhead/bluetooth
+endif
 
 # Wifi related defines
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
@@ -64,6 +72,7 @@ TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOOTLOADER_BOARD_NAME := hammerhead
 TARGET_BOARD_INFO_FILE := device/lge/hammerhead/board-info.txt
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+TARGET_PROVIDES_GPS_LOC_API := true
 TARGET_NO_RPC := true
 
 BOARD_EGL_CFG := device/lge/hammerhead/egl.cfg
@@ -72,6 +81,7 @@ USE_OPENGL_RENDERER := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_ION := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -94,18 +104,19 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+BOARD_SUPPRESS_SECURE_ERASE := true
+
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
+PDK_PLATFORM_ZIP_PRODUCT_BINARIES := kernel/lge/hammerhead/vmlinux.bz2
+
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy
-
-# Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_hammerhead_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
@@ -150,18 +161,8 @@ TARGET_TOUCHBOOST_FREQUENCY:= 1200
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 USE_DEVICE_SPECIFIC_CAMERA:= true
 
-# Recovery
-RECOVERY_FSTAB_VERSION := 2
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-
-# Flags
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
-
--include vendor/lge/hammerhead/BoardConfigVendor.mk

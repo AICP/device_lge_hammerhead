@@ -112,7 +112,9 @@ PRODUCT_CHARACTERISTICS := nosdcard
 DEVICE_PACKAGE_OVERLAYS := \
     device/lge/hammerhead/overlay
 
-PRODUCT_PACKAGES := \
+# Torch
+PRODUCT_PACKAGES += \
+    Torch \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
@@ -171,6 +173,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     power.msm8974
+
+# Mpdecision init.d script
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/01mpdecision:system/etc/init.d/01mpdecision
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
@@ -344,10 +350,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     QXDMLogger
-
-# rename mpdecision bin
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/99mpdecRenamer:system/etc/init.d/99mpdecRenamer
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc.userdebug:root/init.hammerhead.diag.rc

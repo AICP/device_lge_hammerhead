@@ -1,6 +1,6 @@
 [
   {
-    "repository": "AICP/kernel_lge_hammerhead",
+    "repository": "SlimRoms/kernel_lge_hammerhead",
     "target_path": "kernel/lge/hammerhead",
     "branch":      "lp5.0"
   },
@@ -15,4 +15,3 @@
     "branch": "lp5.0"
   }
 ]
-
