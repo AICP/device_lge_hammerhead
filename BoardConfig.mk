@@ -108,7 +108,7 @@ TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
-PDK_PLATFORM_ZIP_PRODUCT_BINARIES := kernel/lge/hammerhead/vmlinux.bz2
+#PDK_PLATFORM_ZIP_PRODUCT_BINARIES := kernel/lge/hammerhead/vmlinux.bz2
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 

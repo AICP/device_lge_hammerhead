@@ -20,8 +20,8 @@
 # Everything in this directory will become public
 
 # Prebuilt Kernel
-TARGET_PREBUILT_KERNEL := device/lge/hammerhead/zImage-dtb
-LOCAL_KERNEL := device/lge/hammerhead/zImage-dtb
+TARGET_PREBUILT_KERNEL := device/lge/hammerhead-kernel/zImage-dtb
+LOCAL_KERNEL := device/lge/hammerhead-kernel/zImage-dtb
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
 
