@@ -19,6 +19,16 @@
 #
 # Everything in this directory will become public
 
+# Prebuilt Kernel
+TARGET_PREBUILT_KERNEL := device/lge/hammerhead/zImage-dtb
+LOCAL_KERNEL := device/lge/hammerhead/zImage-dtb
+PRODUCT_COPY_FILES := \
+    $(LOCAL_KERNEL):kernel
+
+
+PRODUCT_COPY_FILES := \
+    $(LOCAL_KERNEL):kernel
+
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
     device/lge/hammerhead/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
