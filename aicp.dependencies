@@ -1,8 +1,8 @@
 [
   {
-    "repository": "SlimRoms/device_lge_hammerhead-kernel",
-    "target_path": "device/lge/hammerhead-kernel",
-    "branch":      "lp5.0"
+    "repository": "CyanogenMod/android_kernel_lge_hammerhead",
+    "target_path": "kernel/lge/hammerhead",
+    "branch":      "cm-12.0"
   },
   {
     "repository": "AICP/proprietary_vendor_broadcom",

@@ -32,4 +32,4 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/lge/hammerhead/device.mk)
-$(call inherit-product-if-exists, vendor/lge/hammerhead/hammerhead-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/hammerhead/device-vendor.mk)
