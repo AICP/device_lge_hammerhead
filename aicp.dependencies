@@ -5,7 +5,7 @@
     "branch":      "cm-12.0"
   },
   {
-    "repository": "CyanogenMod/proprietary_vendor_lge",
+    "repository": "TheMuppets/proprietary_vendor_lge",
     "target_path": "vendor/lge",
     "branch":      "lp5.0"
   }
