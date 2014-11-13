@@ -7,6 +7,6 @@
   {
     "repository": "TheMuppets/proprietary_vendor_lge",
     "target_path": "vendor/lge",
-    "branch":      "lp5.0"
+    "branch":      "cm-12.0"
   }
 ]
