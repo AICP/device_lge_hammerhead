@@ -1,5 +1,10 @@
 [
   {
+    "repository": "CyanogenMod/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "branch":      "cm-12.0"
+  },
+  {
     "repository": "AICP/kernel_lge_hammerhead",
     "target_path": "kernel/lge/hammerhead",
     "branch":      "lp5.0"
@@ -8,10 +13,5 @@
     "repository": "TheMuppets/proprietary_vendor_lge",
     "target_path": "vendor/lge",
     "branch":      "cm-12.0"
-  },
-  {
-    "repository": "AICP/device_qcom_common",
-    "target_path": "device/qcom/common",
-    "branch":      "lp5.0"
   }
 ]
