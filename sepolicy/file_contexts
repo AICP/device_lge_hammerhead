@@ -151,3 +151,7 @@
 
 # Thermal engine
 /dev/msm_thermal_query            u:object_r:thermal_engine_device:s0
+
+/sys/devices/platform/kcal_ctrl.0(/.*)?		u:object_r:kcal_dev:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?	u:object_r:kcal_dev:s0
+/sys/devices/virtual/timed_output/vibrator/amp u:object_r:vibe_dev:s0
