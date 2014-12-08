@@ -7,16 +7,16 @@
   {
     "repository": "AICP/proprietary_vendor_lge",
     "target_path": "vendor/lge",
-    "branch":      "aicp"
+    "branch":      "lp5.0"
   },
   {
     "repository": "AICP/proprietary_vendor_broadcom",
     "target_path": "vendor/broadcom",
-    "branch":      "aicp"
+    "branch":      "lp5.0"
   },
   {
     "repository": "AICP/proprietary_vendor_qcom",
     "target_path": "vendor/qcom",
-    "branch":      "aicp"
+    "branch":      "lp5.0"
   }
 ]
