@@ -15,7 +15,7 @@
     "branch":      "aicp"
   },
   {
-    "repository": "proprietary_vendor_qcom",
+    "repository": "AICP/proprietary_vendor_qcom",
     "target_path": "vendor/qcom",
     "branch":      "aicp"
   }
