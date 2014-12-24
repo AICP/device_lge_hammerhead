@@ -5,8 +5,8 @@
     "branch":      "lp5.0"
   },
   {
-    "repository": "TheMuppets/proprietary_vendor_lge",
+    "repository": "AICP/proprietary_vendor_lge",
     "target_path": "vendor/lge",
-    "branch":      "cm-12.0"
+    "branch":      "lp5.0"
   }
 ]
