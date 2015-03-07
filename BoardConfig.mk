@@ -148,7 +148,6 @@ BOARD_SEPOLICY_UNION += \
        thermald.te \
        time.te \
        ueventd.te \
-       vibe_dev.te \
        vss.te \
        wpa.te \
        file_contexts \
