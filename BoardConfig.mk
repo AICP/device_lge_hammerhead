@@ -130,7 +130,6 @@ BOARD_SEPOLICY_UNION += \
        healthd.te \
        hostapd.te \
        irsc_util.te \
-       kcal_dev.te \
        mediaserver.te \
        mpdecision.te \
        netmgrd.te \
