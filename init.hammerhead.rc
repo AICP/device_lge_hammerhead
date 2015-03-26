@@ -242,10 +242,12 @@ on post-fs-data
     write /dev/cpuctl/apps/cpu.notify_on_migrate 1
 
     # Hardware tunables
-    chown system system /sys/devices/virtual/timed_output/vibrator/amp
-    chmod 0664 /sys/devices/virtual/timed_output/vibrator/amp
-    chown system system /sys/devices/virtual/graphics/fb0/rgb
-    chmod 0664 /sys/devices/virtual/graphics/fb0/rgb
+    chown root system /sys/class/timed_output/vibrator/amp
+    chown root system /sys/devices/platform/kcal_ctrl.0/kcal
+    chmod 0664 /sys/class/timed_output/vibrator/amp
+    chmod 0664 /sys/devices/platform/kcal_ctrl.0/kcal
+    restorecon /sys/class/timed_output/vibrator/amp
+    restorecon /sys/devices/platform/kcal_ctrl.0/kcal
 
     setprop vold.post_fs_data_done 1
 
@@ -472,6 +474,14 @@ service bdAddrLoader /system/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -
     user bluetooth
     group system bluetooth
     oneshot
+
+# bugreport is triggered by holding down volume down, volume up and power
+service bugreport /system/bin/dumpstate -d -p -B \
+        -o /data/data/com.android.shell/files/bugreports/bugreport
+    class main
+    disabled
+    oneshot
+    keycodes 114 115 116
 
 service mpdecision /system/bin/mpdecision --avg_comp
    class main

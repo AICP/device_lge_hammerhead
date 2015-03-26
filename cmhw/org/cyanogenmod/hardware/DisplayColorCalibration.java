@@ -20,18 +20,17 @@ import org.cyanogenmod.hardware.util.FileUtils;
 import java.io.File;
 
 public class DisplayColorCalibration {
-    private static final String COLOR_FILE = "/sys/devices/virtual/graphics/fb0/rgb";
-
+    private static final String COLOR_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
     public static boolean isSupported() {
         return new File(COLOR_FILE).exists();
     }
 
     public static int getMaxValue() {
-        return 32768;
+        return 255;
     }
 
     public static int getMinValue() {
-        return 255;
+        return 0;
     }
 
     public static int getDefValue() {
