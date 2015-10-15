@@ -1,4 +1,4 @@
-broadcom)
+  broadcom)
     TO_EXTRACT="\
             system/vendor/firmware/bcm2079x-b5_firmware.ncd \
             system/vendor/firmware/bcm2079x-b5_pre_firmware.ncd \

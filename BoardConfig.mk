@@ -69,7 +69,7 @@ TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOOTLOADER_BOARD_NAME := hammerhead
 TARGET_BOARD_INFO_FILE := device/lge/hammerhead/board-info.txt
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
-TARGET_PROVIDES_GPS_LOC_API := true
+BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
 USE_OPENGL_RENDERER := true
@@ -98,58 +98,17 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-BOARD_SUPPRESS_SECURE_ERASE := true
-
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 
-PDK_PLATFORM_ZIP_PRODUCT_BINARIES := kernel/lge/hammerhead/vmlinux.bz2
-
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.hammerhead
 
-BOARD_SEPOLICY_DIRS += \
-       device/lge/hammerhead/sepolicy
+BOARD_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy
 
 # Define kernel config for inline building
 TARGET_KERNEL_CONFIG := cyanogenmod_hammerhead_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
-
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-       app.te \
-       bluetooth_loader.te \
-       bridge.te \
-       camera.te \
-       device.te \
-       domain.te \
-       file.te \
-       healthd.te \
-       hostapd.te \
-       irsc_util.te \
-       mediaserver.te \
-       mpdecision.te \
-       netmgrd.te \
-       platform_app.te \
-       qmux.te \
-       radio.te \
-       rild.te \
-       rmt.te \
-       sensors.te \
-       ssr.te \
-       surfaceflinger.te \
-       system_app.te \
-       system_server.te \
-       tee.te \
-       thermald.te \
-       time.te \
-       ueventd.te \
-       vss.te \
-       wpa.te \
-       file_contexts \
-       genfs_contexts \
-       te_macros
 
 HAVE_ADRENO_SOURCE:= false
 
@@ -178,7 +137,3 @@ USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
-
-
-# Hardware
-BOARD_HARDWARE_CLASS := device/lge/hammerhead/cmhw
