@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     librs_jni
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 PRODUCT_PACKAGES += \
     gralloc.msm8974 \
     libgenlock \
