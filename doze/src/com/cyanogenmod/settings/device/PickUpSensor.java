@@ -100,7 +100,7 @@ public class PickUpSensor implements SensorEventListener {
     }
 
     public void enable() {
-        if (!mEnabled) {
+        if (!mEnabled && mPickUpSensor != null) {
             reset();
             mSensorManager.registerListener(this, mPickUpSensor,
                     PICKUP_DELAY, PICKUP_LATENCY);
@@ -114,7 +114,7 @@ public class PickUpSensor implements SensorEventListener {
     }
 
     public void disable() {
-        if (mEnabled) {
+        if (mEnabled && mPickUpSensor != null) {
             mSensorManager.unregisterListener(this, mPickUpSensor);
             mEnabled = false;
         }
