@@ -22,7 +22,6 @@
   <string name="pick_up_gesture_summary">Mostra notifiche al sollavamento</string>
   <string name="pocket_gesture_title">Tasca</string>
   <string name="pocket_gesture_summary">Mostra notifiche quando togli dalla tasca</string>
-  <string name="proximity_wake_title">Risveglio prossimità</string>
   <string name="proximity_wake_enable_title">Risveglio prossimità</string>
   <string name="proximity_wake_enable_summary">Risveglia il dispositivo al passaggio della mano</string>
 </resources>

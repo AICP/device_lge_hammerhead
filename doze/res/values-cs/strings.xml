@@ -18,9 +18,10 @@
   <string name="ambient_display_enable_summary">Probudit obrazovku při upozornění</string>
   <string name="hand_wave_gesture_title">Mávání rukou</string>
   <string name="hand_wave_gesture_summary">Upozornit pulsováním při zamáváním rukou</string>
+  <string name="pick_up_gesture_title">Sebrání</string>
+  <string name="pick_up_gesture_summary">Upozornit pulsováním při sebrání</string>
   <string name="pocket_gesture_title">Kapsa</string>
   <string name="pocket_gesture_summary">Upozornit pulsováním při vyjmutí z kapsy</string>
-  <string name="proximity_wake_title">Probudit přiblížením</string>
   <string name="proximity_wake_enable_title">Probudit přiblížením</string>
   <string name="proximity_wake_enable_summary">Probudit zařízení pomocí zamávání rukou</string>
 </resources>
