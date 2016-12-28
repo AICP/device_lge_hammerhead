@@ -1,6 +1,6 @@
 [
     {
-        "repository":   "CyanogenMod/android_kernel_lge_hammerhead",
+        "repository":   "LineageOS/android_kernel_lge_hammerhead",
         "target_path":  "kernel/lge/hammerhead",
         "branch":       "cm-14.1"
     },
@@ -10,7 +10,7 @@
         "branch":       "n7.1"
     },
     {
-        "repository":   "CyanogenMod/android_packages_resources_devicesettings",
+        "repository":   "LineageOS/android_packages_resources_devicesettings",
         "target_path":  "packages/resources/devicesettings",
         "branch":       "cm-14.1"
     }
